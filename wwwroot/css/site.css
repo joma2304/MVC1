@@ -60,6 +60,7 @@
   border: none;
   background: transparent;
   cursor: pointer;
+  padding-bottom: 5px;
 }
 
 .bar {
@@ -135,6 +136,7 @@
   background: #6d9877;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: white;
 }
 
 .persons:hover {
