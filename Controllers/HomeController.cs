@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MVC1.Models;
+using Newtonsoft.Json;
 
 namespace MVC1.Controllers;
 
@@ -20,11 +21,13 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult MVC()
+    public IActionResult Persons()
     {
-        ViewBag.Message = "MVC"; //ViewBag för MVC
-        ViewData["Welcome-text"] = "Test ....";
-        return View();
+        ViewBag.Message = "Personer"; //ViewBag för personer
+        ViewData["Welcome-text"] = "Här är en lista med personer:";
+        var jsonStr = System.IO.File.ReadAllText("persons.json");
+        var JsonObj = JsonConvert.DeserializeObject<IEnumerable<Persons>>(jsonStr);
+        return View(JsonObj);
     }
 
     public IActionResult About()
@@ -32,11 +35,5 @@ public class HomeController : Controller
         ViewBag.Message = "Om Sidan"; //ViewBag för Om 
         ViewData["Welcome-text"] = "Test ....";
         return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<MVC1.Models.Persons>
+@{
+    ViewData["Title"] = "MVC";
+}
+
+<h1>@ViewBag.Message</h1>
+<p>@ViewData["Welcome-text"]</p>
+
+<div class="persons">
+    @foreach (var person in Model)
+    {
+        <p> Namn: @person.PerName - Ålder: @person.Age - Stad: @person.City</p>
+    }
+</div>

@@ -1,0 +1,28 @@
+[
+    {
+      "PerName": "Alice Johansson",
+      "Age": 28,
+      "City": "Stockholm"
+    },
+    {
+      "PerName": "Erik Svensson",
+      "Age": 35,
+      "City": "Göteborg"
+    },
+    {
+      "PerName": "Maja Lindgren",
+      "Age": 22,
+      "City": "Malmö"
+    },
+    {
+      "PerName": "Oskar Berg",
+      "Age": 40,
+      "City": "Uppsala"
+    },
+    {
+      "PerName": "Sofia Karlsson",
+      "Age": 31,
+      "City": "Lund"
+    }
+  ]
+  
