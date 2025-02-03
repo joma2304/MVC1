@@ -15,15 +15,22 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        ViewBag.Message = "Hem"; //ViewBag för hem
+        ViewData["Welcome-text"] = "Välkommen till startsidan för denna webbplats";
         return View();
     }
 
     public IActionResult MVC()
     {
+        ViewBag.Message = "MVC"; //ViewBag för MVC
+        ViewData["Welcome-text"] = "Test ....";
         return View();
     }
 
-    public IActionResult About() {
+    public IActionResult About()
+    {
+        ViewBag.Message = "Om Sidan"; //ViewBag för Om 
+        ViewData["Welcome-text"] = "Test ....";
         return View();
     }
 
