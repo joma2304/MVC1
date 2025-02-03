@@ -1,35 +1,135 @@
-html {
-  font-size: 14px;
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.container {
+  min-height: 75vh;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/*Header / nav*/
+.nav-container {
+  margin: 0 auto;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
-
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
-}
-
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3f9351;
 }
 
 .logo {
-  max-width: 125px;
+  max-width: 115px;
+}
+
+.nav-div {
+  display: flex;
+}
+
+.nav-ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-li {
+  margin-right: 20px;
+}
+
+.nav-a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3em;
+}
+
+.nav-a:hover {
+  color: black;
+}
+
+/* Hamburgermeny */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.bar {
+  background-color: #fff;
+  height: 4px;
+  width: 100%;
+}
+
+/* Media för mindre skärmar */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-div {
+    width: 100%;
+  }
+
+  .nav-ul {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-li {
+    margin: 10px 0;
+  }
+
+  .logo {
+    max-width: 80px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-ul.active {
+    display: flex;
+  }
+}
+
+/*För main*/
+.main {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  text-align: left;
+  background-color: aliceblue;
+  margin-top: 15px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/*H1*/
+.h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/*Footer*/
+.footer-container {
+  display: flex;
+  text-align: left;
+  background-color: aliceblue;
+  margin-top: 15px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
