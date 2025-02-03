@@ -108,7 +108,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  max-width: 1000px;
+  max-width: 1200px;
   text-align: left;
   background-color: aliceblue;
   margin-top: 15px;
@@ -121,6 +121,25 @@
 .h1 {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.welcome-text {
+  margin-bottom: 20px;
+}
+
+/*Personer*/
+.persons {
+  min-width: 250px;
+  padding: 10px 40px;
+  margin-bottom: 10px;
+  background: #6d9877;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.persons:hover {
+  background-color: aliceblue;
+  color: rgb(16, 84, 28);
 }
 
 /*Footer*/
