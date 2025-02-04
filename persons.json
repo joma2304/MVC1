@@ -1,28 +1,32 @@
 [
-    {
-      "PerName": "Alice Johansson",
-      "Age": 28,
-      "City": "Stockholm"
-    },
-    {
-      "PerName": "Erik Svensson",
-      "Age": 35,
-      "City": "Göteborg"
-    },
-    {
-      "PerName": "Maja Lindgren",
-      "Age": 22,
-      "City": "Malmö"
-    },
-    {
-      "PerName": "Oskar Berg",
-      "Age": 40,
-      "City": "Uppsala"
-    },
-    {
-      "PerName": "Sofia Karlsson",
-      "Age": 31,
-      "City": "Lund"
-    }
-  ]
-  
+  {
+    "PerName": "Alice Johansson",
+    "Age": 28,
+    "City": "Stockholm",
+    "Accept": true
+  },
+  {
+    "PerName": "Erik Svensson",
+    "Age": 35,
+    "City": "Göteborg",
+    "Accept": true
+  },
+  {
+    "PerName": "Maja Lindgren",
+    "Age": 22,
+    "City": "Malmö",
+    "Accept": true
+  },
+  {
+    "PerName": "Oskar Berg",
+    "Age": 40,
+    "City": "Uppsala",
+    "Accept": true
+  },
+  {
+    "PerName": "Sofia Karlsson",
+    "Age": 31,
+    "City": "Lund",
+    "Accept": true
+  }
+]

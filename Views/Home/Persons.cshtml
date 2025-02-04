@@ -7,10 +7,11 @@
 <p class="welcome-text">@ViewData["Welcome-text"]</p>
 
 
-    @foreach (var person in Model)
-    {
-        <div class="persons">
-        <p> Namn: @person.PerName <br> Ålder: @person.Age <br> Stad: @person.City</p>
-        </div>
-    }
+@foreach (var person in Model)
+{
+    <div class="persons">
+    <p> Namn: @person.PerName <br> Ålder: @person.Age <br> Stad: @person.City</p>
+</div>
+}
 
+<a asp-action="AddPerson" class="addPers">Lägg till en ny person</a>

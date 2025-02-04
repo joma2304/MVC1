@@ -30,10 +30,36 @@ public class HomeController : Controller
         return View(JsonObj);
     }
 
-    public IActionResult About()
+    [HttpGet]
+    public IActionResult AddPerson()
     {
-        ViewBag.Message = "Om Sidan"; //ViewBag för Om 
-        ViewData["Welcome-text"] = "Test ....";
+        ViewBag.Message = "Lägg till personer"; //ViewBag för personer
+        ViewData["Welcome-text"] = "Fyll i förmuläret nedan för att lägga till en person:";
         return View();
+    }
+
+    [HttpPost]
+    public IActionResult AddPerson(Persons newPerson)
+    {
+
+        if (!ModelState.IsValid) //Ifall inte valideras korrekt
+        {
+            return View(newPerson); // Skicka tillbaka formuläret med felmeddelanden
+        }
+
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "persons.json");
+
+        // Läs in befintliga personer
+        var jsonStr = System.IO.File.ReadAllText(filePath);
+        var personList = JsonConvert.DeserializeObject<List<Persons>>(jsonStr) ?? new List<Persons>();
+
+        // Lägg till den nya personen
+        personList.Add(newPerson);
+
+        // Spara tillbaka till jsonfilen
+        var updatedJson = JsonConvert.SerializeObject(personList, Formatting.Indented);
+        System.IO.File.WriteAllText(filePath, updatedJson);
+
+        return RedirectToAction("Persons"); //Skickas till sidan med personer
     }
 }

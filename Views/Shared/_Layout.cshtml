@@ -11,44 +11,40 @@
 </head>
 
 <body>
-<header>
-    <div class="nav-container">
-        <nav class="nav">
-            <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logotyp2.png" alt="logotyp" class="logo"></a>
-            
-            <button class="hamburger" id="hamburger-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            
-            <div class="nav-div">
-                <ul class="nav-ul" id="nav-ul">
-                    <li class="nav-li">
-                        <a class="nav-a" asp-area="" asp-controller="Home" asp-action="Index">Hem</a>
-                    </li>
-                    <li class="nav-li">
-                        <a class="nav-a" asp-area="" asp-controller="Home" asp-action="Persons">Personer</a>
-                    </li>
-                    <li class="nav-li">
-                        <a class="nav-a" asp-area="" asp-controller="Home" asp-action="About">Om sidan</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
+    <header>
+        <div class="nav-container">
+            <nav class="nav">
+                <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logotyp2.png" alt="logotyp"
+                        class="logo"></a>
+
+                <button class="hamburger" id="hamburger-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <div class="nav-div">
+                    <ul class="nav-ul" id="nav-ul">
+                        <li class="nav-li">
+                            <a class="nav-a" asp-area="" asp-controller="Home" asp-action="Index">Hem</a>
+                        </li>
+                        <li class="nav-li">
+                            <a class="nav-a" asp-area="" asp-controller="Home" asp-action="Persons">Personer</a>
+                        </li>
+                        <li class="nav-li">
+                            <a class="nav-a" asp-area="" asp-controller="Home" asp-action="AddPerson">Lägg till</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
     <div class="container">
         <main role="main" class="main">
             @RenderBody()
         </main>
     </div>
-
-    <footer>
-        <div class="footer-container">
-           <p> &copy; 2025 - MVC - joma2304 </p>
-        </div>
-    </footer>
+    @await Html.PartialAsync("_Footer") <!-- Footer partial -->
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

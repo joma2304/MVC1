@@ -1,0 +1,32 @@
+@model MVC1.Models.Persons
+@{
+    ViewData["Title"] = "Om sidan";
+}
+
+<h1 class="h1">@ViewBag.Message</h1>
+<p class="welcome-text">@ViewData["Welcome-text"]</p>
+
+<div class="form-container">
+    <form asp-action="AddPerson" method="post">
+        <label asp-for="PerName">Namn:</label>
+        <input asp-for="PerName" placeholder="För och efternamn" required/>
+
+        <label asp-for="Age">Ålder:</label>
+        <input asp-for="Age" placeholder="Skriv in ålder" required/>
+
+        <label asp-for="City">Stad:</label>
+        <select asp-for="City">
+            <option value="Malmö">Malmö</option>
+            <option value="Stockholm">Stockholm</option>
+            <option value="Göteborg">Göteborg</option>
+            <option value="Sundsvall">Sundsvall</option>
+        </select>
+
+        <label asp-for="Accept">Godkänn villkoren:</label>
+        <input asp-for="Accept" type="checkbox" />
+        <span asp-validation-for="Accept" class="validation"></span>
+
+        <button type="submit">Lägg till person</button>
+    </form>
+
+</div>
