@@ -17,20 +17,22 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         ViewBag.Message = "Hem"; //ViewBag för hem
-        ViewData["Welcome-text"] = "Välkommen till startsidan för denna webbplats";
+        ViewData["Welcome-text"] = "Välkommen till webbplatsen för min lösning av moment 2 i kursen DT191G. Denna webbplats är skapad som en MVC, den innehåller en del som läser ut data för personer som är sparade i en JSON fil samt en annan del med ett formulär för att lägga till personer i JSON filen och därmed läsa ut dem i föregående del. Nedan finns även en knapp som är skapad som en partial som tar en till formuläret för att lägga till en ny person.";
         return View();
     }
 
+    [Route("personer")] //Namn på route
     public IActionResult Persons()
     {
         ViewBag.Message = "Personer"; //ViewBag för personer
         ViewData["Welcome-text"] = "Här är en lista med personer:";
         var jsonStr = System.IO.File.ReadAllText("persons.json");
-        var JsonObj = JsonConvert.DeserializeObject<IEnumerable<Persons>>(jsonStr);
+        var JsonObj = JsonConvert.DeserializeObject<List<Persons>>(jsonStr);
         return View(JsonObj);
     }
 
     [HttpGet]
+    [Route("lagg-till")] //Namn på route
     public IActionResult AddPerson()
     {
         ViewBag.Message = "Lägg till personer"; //ViewBag för personer
@@ -39,6 +41,7 @@ public class HomeController : Controller
     }
 
     [HttpPost]
+    [Route("lagg-till")] //Namn på route
     public IActionResult AddPerson(Persons newPerson)
     {
 

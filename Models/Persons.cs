@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 namespace MVC1.Models
 {
-    //Klass för personer
+    //Model för personer
     public class Persons
     {
         public string? PerName { get; set; }
@@ -10,8 +10,8 @@ namespace MVC1.Models
         public int Age { get; set; }
         public string? City { set; get; }
 
-        [Required(ErrorMessage = "Du måste godkänna villkoren.")]
-        [Range(typeof(bool), "true", "true", ErrorMessage = "Du måste godkänna villkoren.")]
+        [Required(ErrorMessage = "Du måste godkänna villkoren.")] //Meddelande vid fel
+        [Range(typeof(bool), "true", "true", ErrorMessage = "Du måste godkänna villkoren.")] //Måste trycka i checkbox så att accept=ture
         public bool Accept { set; get; }
 
     }

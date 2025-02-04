@@ -28,5 +28,11 @@
     "Age": 31,
     "City": "Lund",
     "Accept": true
+  },
+  {
+    "PerName": "Johan Magnusson",
+    "Age": 26,
+    "City": "Malmö",
+    "Accept": true
   }
 ]

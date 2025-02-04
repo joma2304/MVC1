@@ -126,7 +126,9 @@
 }
 
 .welcome-text {
+  max-width: 800px;
   margin-bottom: 20px;
+  line-height: 1.3em;
 }
 
 /*Personer*/
